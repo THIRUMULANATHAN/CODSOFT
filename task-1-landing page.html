@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap" rel="stylesheet">
+    <!--font awwsome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            padding: 0%;
+            margin: 0px;
+            scroll-behavior: smooth;
+        }
+        
+        .icon{
+            margin-left: 15px;
+        }
+        
+        .navbar {
+            position: sticky;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            z-index: 10;
+        }
+        
+        .navbar-links {
+            padding: 10px;
+            display: flex;
+            column-gap: 10px;
+            font-size: 20px;
+        }
+        
+        .navbar-links a {
+            text-decoration: none;
+            color: #1d232c;
+        }
+        
+        .navbar-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .navbar-menu-toggle {
+            display: none;
+        }
+        
+        .header-img1
+        {
+            border-radius: 10px;
+        }
+        .service
+        {
+            padding: 20px;
+        }
+        
+        .service-container-1
+        {
+            margin-top: 150px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 25px;
+        }
+        
+        .service-container-2
+        {
+            margin-right: 25px;
+            margin-left: 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            border: 2px solid #1d232c;
+            border-radius: 10px;
+            margin-bottom: 100px;
+            margin-top: 20px;
+        }
+        
+        .service-container-2 div{
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .service-container-2 div p,.service-container-2 div h4{
+            background-color: #ffffff;
+        }
+        
+        @media screen and (max-width: 1000px) {
+            .navbar-menu-toggle {
+                display: block;
+            }
+        
+            .navbar-links {
+                display: none;
+            }
+        
+            .header-img1
+            {
+                display: none;
+            }
+        
+            .service-container-1
+            {
+                margin-bottom: 10px;
+            }
+           
+            .service-container-2
+            {
+                flex-direction: column;
+            }
+            
+            .new-arrival-container
+            {
+                display: grid;
+                grid-template-rows: 1fr;
+                margin-top: 15px;
+            }
+            .news-font{
+                padding-top: 10px;
+            }
+            .content{
+                margin-left: 50%;
+            }
+            .content h1{
+                font-size:medium;
+            }
+            .content p{
+                font-size: small;
+                padding-bottom: 5px;
+            }
+            .header_button{
+                margin-left: 50%;
+            }
+        }
+        
+        .side-navbar
+        {
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            padding: 20px;
+            background-color: #1d232c;
+            border-radius: 10px;
+            width: 20%;
+            height: 20%;
+            position: fixed;
+            color: white;
+            display: none;
+            margin-top: 1px;
+        }
+        
+        .side-navlink
+        {
+            margin-bottom: 30px;
+        }
+        
+        .side-navlink a
+        {
+            text-decoration: none;
+            color: white;
+        }
+        .cross-icon
+        {
+            padding-left: 98%;
+        }
+        .side-navlink a:hover{
+            text-decoration: underline;
+        }
+        
+        
+        .header
+        {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            padding: 50px;
+        }
+        
+        .header_button
+        {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin: 10px;
+            background-color: #1d232c;
+            color: white;
+            cursor: pointer;
+        }
+        
+        
+        
+        .new-arrival
+        {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        
+        .new-arrival-container
+        {
+            z-index: 1;
+            position: relative;
+            flex-basis: 20%;
+        }
+        
+        .new-arrival-container button
+        {
+            padding-left: 10%;
+            padding-right: 10%;
+            padding-top: 5%;
+            padding-bottom: 5%;
+            margin-top: 10%;
+            color: #1d232c;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 10px;
+            border: none;
+        }
+        
+        .new-arrival-container img
+        {
+            border-radius: 20px;
+        }
+        
+        .News
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 25px;
+        } 
+        .News input
+        {
+            padding: 11px;
+            width: 80vw;
+            margin-bottom: 10px;
+            border: solid #1d232c 3px;
+        }
+        .News-button
+        {
+            margin-top: 10px;
+            color: #0a0a0a;
+            background-color: #f2f4f7;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .header_button:hover
+        {
+            color: #1d232c;
+            background-color: #f2f4f7;
+        }
+        .News-button:hover
+        {
+            color: #f2f4f7;
+            background-color: #1d232c;
+            cursor: pointer;
+        }
+        
+        .footer
+        {
+            text-align: center;
+            margin-top: 20px;
+            color: white;
+            padding: 40px;
+            background-color: #1d232c;
+        }
+        .footer-text a{
+            padding: 5px;
+        }
+        
+        .footer-text a:hover
+        {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        
+        
+        .header_button:hover,
+        .new-arrival-container button:hover,
+        .side-navlink a:hover {
+            background-color: #1d232c; 
+            color: white;
+            cursor: pointer;
+        }        
+    </style>
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar">
+        <h1 class="icon">Shop sphere</h1>
+        <div class="navbar-links">
+            <p><a href="navlink">Home</a></p>
+            <p><a href="navlink">Collection</a></p>
+            <p><a href="navlink">Contact</a></p>
+        </div>
+
+        <div class="navbar-menu-toggle" onclick="showNavbar()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+
+    <!--Side_Navbar-->
+
+    <nav class="side-navbar">
+        <p class="cross-icon" onclick="closeNavbar()"><i class="fa-solid fa-xmark"></i></p>
+
+        <p class="side-navlink"><a href="">Home</a></p>
+        <p class="side-navlink"><a href="">Collection</a></p>
+        <p class="side-navlink"><a href="">Contact</a></p>
+
+    </nav>
+
+
+
+    <!--Header-->
+    <div class="header">
+        <div class="content">
+            <h1>Level up your style</h1>
+            <p>With our stunning collection</p>
+            <button class="header_button">Shop Now</button>
+        </div>
+        <div>
+            <img src="header-poster.jpg" width="300x300" class="header-img1">
+        </div>
+    </div>
+
+    
+    
+
+    <br><br>
+    <!--New Arrival-->
+    <h1 style="color: #1d232c; text-align: center;margin: top 300px;">New Arraivals</h1>
+    <br>
+    <div class="new-arrival">
+        <div class="new-arrival-container">
+            <img src="http://source.unsplash.com/random/200x200/?shirt?" class="arr-img">
+            <button>Shop Now<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="new-arrival-container">
+            <img src="http://source.unsplash.com/random/200x200/?pants?">
+            <button>Shop Now<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="new-arrival-container">
+            <img src="http://source.unsplash.com/random/200x200/?footwear?">
+            <button>Shop Now<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+        <div class="new-arrival-container">
+            <img src="http://source.unsplash.com/random/200x200/?hat?">
+            <button>Shop Now<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <!--Service-->
+    <div class="service">
+        <div class="service-container-1">
+            <div>
+                <h2>We Provide</h2>
+                <h3>Best Customer Experience</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-container-2">
+        <div>
+            <i class="fa-regular fa-face-smile"></i>
+            <h4>Satisfaction Guarantee</h4>
+            <p>Our satisfaction guarantee ensures that you are completely content with your purchase. </p>
+        </div>
+
+        <div>
+            <i class="fa-regular fa-thumbs-up"></i>
+            <h4>Quality Assurance</h4>
+            <p>Our satisfaction guarantee ensures that you are completely content with your purchase. </p>
+        </div>
+
+        <div>
+            <i class="fa-regular fa-shield"></i>
+            <h4>Premium Security</h4>
+            <p>With our premium security promise, your peace of mind is our priority.</p>
+        </div>
+    </div>
+
+    <br><br>
+    <!--News-->
+    <div class="News">
+        <h2 class="news-font">Join our News Letter</h2>
+        <p class="news-font">Sign up for our email newsletter to get exclusive discounts,upadtes and more...</p>
+        <br>
+        <div>
+            <input type="text" class="search">
+        </div>
+        <div>
+            <button class="News-button">Subscribe</button>
+        </div>
+    </div>
+
+    <!--footer-->
+    <div class="footer">
+        <div class="footer_container">
+            <div class="footer-box-1">
+                <h1 class="Heading-text">Shop Sphere</h1>
+                <br>
+                <div class="footer-icon">
+                    <p>Follow us :
+                        <i class="fa-brands fa-instagram" style="color: #fff;"></i>
+                        <i class="fa-brands fa-facebook" style="color: #fff;"></i>
+                        <i class="fa-brands fa-twitter" style="color: #fff;"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="footer-text">
+            <p><a>Conditions of Use & Sale </a> <a>Privacy Notice </a> <a>Interest-Based Ads </a></p>
+            <p>© 2024,<a>Shopsphere.com</a>, Inc. or its affiliates</p>
+        </div>
+    </div>
+    <script>
+        var sidenavbar = document.querySelector(".side-navbar");
+
+function showNavbar() {
+    sidenavbar.style.display = "block";
+}
+
+function closeNavbar() {
+    sidenavbar.style.display = "none";
+}
+
+function scrollToSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+    }
+}
+
+
+
+    </script>
+</body>
+
+</html>
